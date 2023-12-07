@@ -13,7 +13,6 @@ git clone "https://github.com/Aple-Crab/Letsbloom.git"
 
 #### Install dependencies:
 
-npm init<br>
 npm i express mongoose body-parser<br>
 
 ### Run the application
