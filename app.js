@@ -1,4 +1,3 @@
-// app.js
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
@@ -6,33 +5,31 @@ const bodyParser = require('body-parser');
 const app = express();
 const PORT = 3000;
 
-// Connect to MongoDB (adjust the connection string accordingly)
+// Connect to MongoDB to local host with database named library
 mongoose.connect( 'mongodb://127.0.0.1:27017/library').then(()=>{
-    console.log("Connected to the Database. Yayzow!");
+    console.log("Connected to the Database!!!");
 }).catch(err => {
     console.log(err);
 });
 
 
-// Book model
+
+// books collection database
 const Book = mongoose.model('Book', {
   title: String,
   author: String,
   publishedYear: Number,
 });
 
-const book1 = new Book({
-    title: "Book1",
-    author: "Author1",
-    publishedYear: 2024,
-});
-book1.save();
+
 
 app.use(bodyParser.json());
 
 // Endpoint 1: Retrieve All Books
+
 app.get('/api/books', async (req, res) => {
   try {
+    await Book.deleteMany();
     const books = await Book.find();
     res.json(books);
   } catch (error) {
@@ -41,6 +38,7 @@ app.get('/api/books', async (req, res) => {
 });
 
 // Endpoint 2: Add a New Book
+
 app.post('/api/books', async (req, res) => {
   try {
     const { title, author, publishedYear } = req.body;
@@ -66,6 +64,7 @@ app.post('/api/books', async (req, res) => {
 });
 
 // Endpoint 3: Update Book Details
+
 app.put('/api/books/:id', async (req, res) => {
   try {
     const { id } = req.params;
@@ -95,6 +94,7 @@ app.put('/api/books/:id', async (req, res) => {
 });
 
 // Start the server
+
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
 });
