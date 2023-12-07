@@ -3,18 +3,21 @@
 This is a simple RESTful API for managing a library system. It interacts with MongoDB to perform basic CRUD operations on books.
 
 ## Getting Started
-###Prerequisites
+### Prerequisites
 Node.js installed<br>
 MongoDB installed and running<br>
-###Installation
-####Clone the repository:
+#### Installation
+#### Clone the repository:
 
-git clone https://github.com/Aple-Crab/Letsbloom.git
-cd library-management-api
-####Install dependencies:
+git clone "https://github.com/Aple-Crab/Letsbloom.git"
+
+#### Install dependencies:
 
 npm init<br>
 npm i express mongoose body-parser<br>
+
+### Run the application
+node app.js
 
 The server will be running on http://localhost:3000.<br>
 API Endpoints
