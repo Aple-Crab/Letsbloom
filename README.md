@@ -3,8 +3,19 @@
 This is a simple RESTful API for managing a library system. It interacts with MongoDB to perform basic CRUD operations on books.
 
 ## Getting Started
+###Prerequisites
+Node.js installed<br>
+MongoDB installed and running<br>
+###Installation
+####Clone the repository:
 
-node app.js<br>
+git clone https://github.com/your-username/library-management-api.git
+cd library-management-api
+####Install dependencies:
+
+npm init<br>
+npm i express mongoose body-parser<br>
+
 The server will be running on http://localhost:3000.<br>
 API Endpoints
 1. Retrieve All Books
