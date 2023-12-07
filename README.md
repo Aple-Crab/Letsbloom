@@ -21,9 +21,8 @@ node app.js
 
 The server will be running on http://localhost:3000.<br>
 API Endpoints
-1. Retrieve All Books
+1. Retrieve All Books<br>
 Endpoint: GET /api/books<br>
-Description: Retrieves a list of all books in the library.<br>
 Response Format:<br>
 {
   "title": "New Book",
